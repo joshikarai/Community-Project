@@ -8,7 +8,7 @@ if (sessionStorage.getItem("gpOfficialLoggedIn") !== "true") {
 }
 
 function getComplaints() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+  return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); 
 }
 
 function saveComplaints(data) {
