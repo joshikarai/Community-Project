@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Officials Dashboard</title>
+  <link rel="stylesheet" href="officials-dashboard.css">
+</head>
+<body>
+  <header class="bar">
+    <h1>Panchayat Officials Dashboard</h1>
+    <button id="logoutBtn" class="secondary">Sign Out</button>
+  </header>
+
+  <main class="wrap">
+    <section class="stats">
+      <article><span>Total Complaints</span><strong id="totalCount">0</strong></article>
+      <article><span>Submitted</span><strong id="submittedCount">0</strong></article>
+      <article><span>In Progress</span><strong id="progressCount">0</strong></article>
+      <article><span>Resolved</span><strong id="resolvedCount">0</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="toolbar">
+        <h2>Complaint Records</h2>
+        <select id="statusFilter">
+          <option value="All">All Statuses</option>
+          <option>Submitted</option>
+          <option>In Progress</option>
+          <option>Resolved</option>
+          <option>Rejected</option>
+        </select>
+        <button id="refreshBtn">Refresh</button>
+      </div>
+
+      <p id="dashboardMessage"></p>
+      <div id="complaintList"></div>
+    </section>
+
+    <section class="panel" id="detailPanel" hidden>
+      <h2>Complaint Details</h2>
+      <div id="complaintDetails"></div>
+
+      <form id="updateForm">
+        <label>Update Status</label>
+        <select id="newStatus">
+          <option>Submitted</option>
+          <option>In Progress</option>
+          <option>Resolved</option>
+          <option>Rejected</option>
+        </select>
+
+        <label>Official Remarks</label>
+        <textarea id="remarks" rows="4"></textarea>
+
+        <button type="submit">Save Update</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="officials-dashboard.js"></script>
+</body>
+</html>

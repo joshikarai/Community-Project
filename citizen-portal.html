@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citizen Complaint Portal</title>
+  <link rel="stylesheet" href="citizen-portal.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html">← Home</a>
+  <h2>Citizen Complaint Portal</h2>
+</header>
+
+<main class="layout">
+<section class="panel">
+  <h2>Submit a Complaint</h2>
+
+  <form id="complaintForm">
+    <label>Full Name *</label>
+    <input type="text" id="citizenName" required maxlength="100">
+
+    <label>Mobile Number *</label>
+    <input type="tel" id="contact" pattern="[6-9][0-9]{9}"
+           maxlength="10" required>
+
+    <label>Village / Area *</label>
+    <input type="text" id="village" required>
+
+    <label>Ward Number</label>
+    <input type="text" id="ward">
+
+    <label>Select Complaint Category *</label>
+
+    <div class="categories">
+      <button type="button" class="category selected" data-category="Roads">🛣️<span>Roads</span></button>
+      <button type="button" class="category" data-category="Water Supply">🚰<span>Water Supply</span></button>
+      <button type="button" class="category" data-category="Street Lights">💡<span>Street Lights</span></button>
+      <button type="button" class="category" data-category="Drainage">🌧️<span>Drainage</span></button>
+      <button type="button" class="category" data-category="Waste Management">🗑️<span>Waste</span></button>
+      <button type="button" class="category" data-category="Sanitation">🧹<span>Sanitation</span></button>
+      <button type="button" class="category" data-category="Other">📌<span>Other</span></button>
+    </div>
+
+    <input type="hidden" id="category" value="Roads">
+
+    <label>Exact Location / Landmark *</label>
+    <input type="text" id="location" required>
+
+    <label>Describe the Problem *</label>
+    <textarea id="description" rows="5" required maxlength="2000"></textarea>
+
+    <label>Upload Photo (Optional, maximum 2 MB)</label>
+    <input type="file" id="photo" accept="image/*">
+
+    <button type="submit" id="submitBtn">Submit Complaint</button>
+    <p id="formMessage"></p>
+  </form>
+</section>
+
+<section class="panel">
+  <h2>My Complaints</h2>
+  <p>Enter your complaint reference and mobile number.</p>
+
+  <form id="trackForm">
+    <label>Complaint Reference</label>
+    <input type="text" id="reference" required>
+
+    <label>Mobile Number</label>
+    <input type="tel" id="trackPhone" pattern="[6-9][0-9]{9}"
+           maxlength="10" required>
+
+    <button type="submit">Track Complaint</button>
+  </form>
+
+  <div id="trackResult"></div>
+</section>
+</main>
+
+<script src="citizen-portal.js"></script>
+</body>
+</html>
