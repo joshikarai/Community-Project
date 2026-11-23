@@ -5,7 +5,7 @@ const $ = id => document.getElementById(id);
 let selectedCategory = "Roads";
 
 function getComplaints() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+  return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); 
 }
 
 function saveComplaints(data) {
