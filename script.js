@@ -9,7 +9,7 @@ function changeLanguage(lang) {
 
   document.querySelectorAll("[data-en]").forEach(element => {
     element.textContent =
-      element.getAttribute("data-" + lang) ||
+      element.getAttribute("data-" + lang) || 
       element.getAttribute("data-en");
   });
 
