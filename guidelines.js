@@ -1,6 +1,6 @@
 
 const agree = document.getElementById("agree");
-const continueBtn = document.getElementById("continueBtn");
+const continueBtn = document.getElementById("continueBtn"); 
 const message = document.getElementById("message");
 
 agree.addEventListener("change", function () {
